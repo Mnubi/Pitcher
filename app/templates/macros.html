@@ -1,0 +1,24 @@
+{% macro showPitch(pitches) %}
+<div class="pitch">
+    {% if pitches %}
+    {% for pitch in pitches %}
+    <div class="card">
+        <div class="card-header">
+            <h4 style="color:blue">{{pitch.title}}</h4>
+        </div>
+        <div class="card-body bg-secondary text-white">
+            <blockquote class="blockquote mb-0 text-white">
+                <p id="quote">"<em>{{pitch.pitch}}</em>."</p>
+                <p class="footer text-white"> Posted by: {{ pitch.user.username}} <span></span> on: {{ pitch.date_posted.strftime('%Y-%m-%d') }}</p>
+                
+            </blockquote>
+        </div>
+        
+    </div>
+
+
+    {% endfor %}
+    {% endif %}
+</div>
+
+{% endmacro %}

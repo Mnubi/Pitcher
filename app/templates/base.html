@@ -1,0 +1,28 @@
+{% extends 'bootstrap/base.html'%}
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
+
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> ONE MINUTE Pitch </title>
+        {% endif %}
+    </head>
+    
+    <body>
+
+        {% block content %}
+
+        {% endblock%}
+    </body>
+</html>
